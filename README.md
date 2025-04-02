@@ -471,7 +471,28 @@ MGUI can also parse and render your XAML markup at runtime using the MGXAMLDesig
      - Anywhere in your code, instantiate 1 or more `MGWindow` and add them to your `MGDesktop` instance via `MGDesktop.Windows`
      - In the Update method: Call `MGDesktop.Update()`
      - In the Draw method: Call `MGDesktop.Draw()`
-      
+
+# Linux Arial Font
+
+## Install Arial Fonts
+
+`sudo apt install fonts-mscorefonts-installer`
+
+`sudo fc-cache -f`
+
+## Link Fonts to Content
+
+In order to build this, we need to symlink the Arial font ttf's into the Content/Fonts/Arial folder;
+
+Make sure you're in the project root directory MGUI
+
+```
+ln -s /usr/share/fonts/truetype/msttcorefonts/Arial.ttf MGUI.Core/Content/Fonts/ArialArial.ttf &&
+ln -s /usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf "MGUI.Core/Content/Fonts/ArialArial Bold.ttf" &&
+ln -s /usr/share/fonts/truetype/msttcorefonts/Arial_Italic.ttf "MGUI.Core/Content/Fonts/ArialArial Italic.ttf" 
+```
+
+
 <details>
   <summary>Example code for your Game class:</summary>
 
